@@ -1,0 +1,199 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: aliceblue;
+    font-weight: 600;
+    background: linear-gradient(to right, #3c6e01, #d6d3d3);
+
+}
+
+/* ================= HEADER ================= */
+/* ---------- Primeira Navbar ---------- */
+header{
+    width: 100%;
+    background: linear-gradient(to right, #3c6e01, #d6d3d3);
+    padding: 5px 0;
+    position: relative;
+    z-index: 3;
+    
+}
+
+header h1{
+    color: aliceblue;
+    padding-left: 1%;
+    font-weight: 700;
+    
+}
+
+.links{
+    display: flex;
+    gap: 20px;
+    padding-left: 0%;
+    align-items: center;
+    
+}
+
+.links a{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 5px 15px;
+    transition: 0.2s;
+}
+
+.links a:hover{
+    transform: scale(1.1);
+    color: #00e1ff;
+}
+
+/* ---------- Fim da Primeira Navbar ---------- */
+
+
+/* ---------- Segunda Navbar ---------- */
+.navbar2{
+    width: 100%;
+    background: linear-gradient(to right, #666565, #727171);
+    padding: 5px 0;
+    padding-left: 1%;
+    text-align: right;
+    position: relative;
+    z-index: 3; /* Esse comando controla qual elemento fica na frente ou atrás de outro na página. */
+}
+
+.links2{
+    display: flex;
+    gap: 20px;
+}
+
+.links2 a{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 5px 15px;
+    transition: 0.2s;
+}
+
+.links2 a:hover{
+    transform: scale(1.1);
+    color: #00e1ff;
+}
+
+.icones a{
+    display: inline-block;
+    
+}
+/* ---------- Fim da Segunda Navbar ---------- */
+
+
+/* ================= SECTION ================= */
+
+section{
+    position: relative;
+    min-height: 100vh;
+}
+
+
+/* ================= VIDEO DE FUNDO ================= */
+
+.video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= FIM DO VIDEO DE FUNDO ================= */
+
+/* Inicio da primeira seção do site*/
+
+.inicio{
+    position: absolute;
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: x-large;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.inicio h1{
+    white-space: nowrap; /* Isso vai impedir que o texto > RECICLA BRASIL < não quebre para a proxima linha  */
+    text-align: center;
+    font-size: 90px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+/* Fim da primeira seção do site*/
+
+/* Inicio da segunda seção do site*/
+
+.section2 p{
+    text-align: center;
+    margin-top: 2%;
+    font-weight: 900;
+}
+
+.section2 h1{
+    text-align: center;
+}
+
+.tutorial{
+    font-weight: 900;
+    font-size: x-large;
+    display: flex;
+    margin-right: 1%;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tutorial div{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+
+}
+.mapa{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+    
+    
+}
+
+.mapa iframe{
+    width: 450px;
+    height: 450px;
+    border-radius: 20px;
+    
+}
+/* Fim da segunda seção do site*/
+
+
+html{
+    scroll-behavior: smooth; /* Ao clilcar no "Como funciona", o user sera direcionado a parte de baixo do site" * */
+}
+
+#carouselExampleSlidesOnly{
+   width: 100%;
+}
+
+#carouselExampleSlidesOnly img{
+    border-top: 10px solid black;
+    border-bottom: 10px solid black ;
+    border-color: black;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}

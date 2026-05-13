@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+
+    <title>Login | RECICLA BRASIL</title>
+
+    <link rel="shortcut icon"
+    href="../Videos e Imagens/favicon-32x32.png"
+    type="image/x-icon">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            overflow:hidden;
+            position:relative;
+            background:#6fb88d;
+        }
+
+        /* ===== FUNDO ===== */
+
+        .background{
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index:-2;
+        }
+
+        .background video{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            filter:brightness(65%);
+        }
+
+        .overlay{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.08),
+            rgba(90,180,120,0.25)
+            );
+            z-index:-1;
+        }
+
+        /* ===== FOLHAS ===== */
+
+        .folha{
+            position:absolute;
+            width:130px;
+            opacity:0.09;
+            z-index:-1;
+        }
+
+        .folha1{
+            top:40px;
+            left:20px;
+            transform:rotate(20deg);
+        }
+
+        .folha2{
+            bottom:20px;
+            right:20px;
+            transform:rotate(-20deg);
+        }
+
+        /* ===== LOGO ===== */
+
+        .logo{
+            width:220px;
+            margin-bottom:20px;
+            transition:0.4s;
+            filter:drop-shadow(0 0 20px rgba(255,255,255,0.25));
+        }
+
+        .logo:hover{
+            transform:scale(1.05);
+        }
+
+        /* ===== CARD ===== */
+
+        .card{
+            width:400px;
+            padding:40px;
+            border-radius:30px;
+            background:rgba(255,255,255,0.22);
+            backdrop-filter:blur(12px);
+            border:1px solid rgba(255,255,255,0.25);
+
+            box-shadow:
+            0 0 30px rgba(255,255,255,0.10),
+            0 0 80px rgba(255,255,255,0.04);
+
+            animation:fade 1s ease;
+        }
+
+        @keyframes fade{
+            from{
+                opacity:0;
+                transform:translateY(20px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        .card h2{
+            text-align:center;
+            color:#000000;
+            margin-bottom:30px;
+            font-size:2rem;
+            font-weight:900;
+            text-shadow:0 0 10px rgba(255,255,255,0.2);
+        }
+
+        /* ===== FORM ===== */
+
+        form{
+            display:flex;
+            flex-direction:column;
+        }
+
+        label{
+            margin-bottom:8px;
+            margin-top:10px;
+            color:#000000;
+            font-weight:600;
+        }
+
+        input{
+            padding:14px;
+            border:none;
+            border-radius:14px;
+            background:rgba(255,255,255,0.18);
+            color:white;
+            outline:none;
+            transition:0.3s;
+            border:1px solid transparent;
+        }
+
+        input::placeholder{
+            color:#000000;
+        }
+
+        input:focus{
+            border:1px solid #ffffff;
+            background:rgba(255,255,255,0.25);
+            box-shadow:0 0 15px rgba(255,255,255,0.15);
+        }
+
+        /* ===== CADASTRO ===== */
+
+        .cadastro{
+            margin-top:18px;
+            text-align:center;
+            color:#0a0404;
+            font-size:0.95rem;
+        }
+
+        .cadastro a{
+            color:#39e417;
+            text-decoration:none;
+            font-weight:700;
+            transition:0.3s;
+        }
+
+        .cadastro a:hover{
+            color:#050806;
+        }
+
+        /* ===== BOTÃO ===== */
+
+        #entrar{
+            margin-top:25px;
+            background:linear-gradient(
+            45deg,
+            #57ff0a86,
+            #007710
+            );
+
+            color:#ffffff;
+            font-weight:900;
+            cursor:pointer;
+            transition:0.4s;
+        }
+
+        #entrar:hover{
+            transform:translateY(-3px);
+            box-shadow:0 0 20px rgba(255,255,255,0.2);
+        }
+
+        /* ===== RESPONSIVO ===== */
+
+        @media(max-width:500px){
+
+            .card{
+                width:90%;
+                padding:30px 25px;
+            }
+
+            .logo{
+                width:180px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- FUNDO -->
+    <div class="background">
+
+        <video autoplay muted loop playsinline>
+            <source src="../Videos e Imagens/VideoReciclagem(2).mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- FOLHAS -->
+    <img class="folha folha1"
+    src="../Videos e Imagens/recycle.png"
+    alt="">
+
+    <img class="folha folha2"
+    src="../Videos e Imagens/recycle.png"
+    alt="">
+
+    <!-- LOGO -->
+    <a href="../HOME/home.html">
+
+        <img class="logo"
+        src="../Videos e Imagens/Recicla Brasil logo design.png"
+        alt="Logo Recicla Brasil">
+
+    </a>
+
+    <!-- CARD LOGIN -->
+    <div class="card">
+
+        <form>
+
+            <h2>♻ Entrar</h2>
+
+            <label for="email">Email:</label>
+
+            <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu Email"
+            required>
+
+            <label for="password">Senha:</label>
+
+            <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Digite sua senha"
+            required>
+
+            <p class="cadastro">
+                Ainda não tem conta?
+
+                <a href="../CADASTRO/cadastro.html">
+                    Cadastre-se
+                </a>
+            </p>
+
+            <input
+            id="entrar"
+            type="submit"
+            value="Entrar">
+
+        </form>
+
+    </div>
+
+</body>
+</html>

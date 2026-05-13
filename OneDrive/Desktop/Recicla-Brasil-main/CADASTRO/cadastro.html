@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | RECICLA BRASIL</title>
+
+    <link rel="shortcut icon" href="../Videos e Imagens/favicon-32x32.png" type="image/x-icon">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            overflow:hidden;
+            position:relative;
+            background:#06110b;
+        }
+
+        /* ===== VÍDEO/FUNDO ===== */
+
+        .background{
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index:-2;
+        }
+
+        .background video{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            filter:brightness(35%);
+        }
+
+        .overlay{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.4),
+            rgba(0,50,20,0.6)
+            );
+            z-index:-1;
+        }
+
+        /* ===== LOGO ===== */
+
+        .logo{
+            width:220px;
+            margin-bottom:20px;
+            transition:0.4s;
+            filter:drop-shadow(0 0 15px rgba(0,255,120,0.3));
+        }
+
+        .logo:hover{
+            transform:scale(1.05);
+        }
+
+        /* ===== CARD ===== */
+
+        .card{
+            width:420px;
+            padding:40px;
+            border-radius:30px;
+            background:rgba(255,255,255,0.06);
+            backdrop-filter:blur(12px);
+            border:1px solid rgba(255,255,255,0.1);
+            box-shadow:
+            0 0 30px rgba(0,255,120,0.1),
+            0 0 80px rgba(0,255,120,0.05);
+            color:white;
+            animation:fade 1s ease;
+        }
+
+        @keyframes fade{
+            from{
+                opacity:0;
+                transform:translateY(20px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        .card h2{
+            text-align:center;
+            margin-bottom:30px;
+            color:#7cffb2;
+            font-size:2rem;
+            font-weight:900;
+        }
+
+        .voltar{
+            display:inline-block;
+            margin-bottom:20px;
+            color:#a8ffcb;
+            text-decoration:none;
+            transition:0.3s;
+            font-size:0.95rem;
+        }
+
+        .voltar:hover{
+            color:white;
+            transform:translateX(-5px);
+        }
+
+        /* ===== CAMPOS ===== */
+
+        .campo{
+            display:flex;
+            flex-direction:column;
+            margin-bottom:18px;
+        }
+
+        .campo label{
+            margin-bottom:8px;
+            font-weight:600;
+            color:#d8ffe8;
+        }
+
+        .campo input{
+            padding:14px;
+            border:none;
+            border-radius:14px;
+            background:rgba(255,255,255,0.08);
+            color:white;
+            outline:none;
+            transition:0.3s;
+            border:1px solid transparent;
+        }
+
+        .campo input::placeholder{
+            color:#cfcfcf;
+        }
+
+        .campo input:focus{
+            border:1px solid #6dff9d;
+            box-shadow:0 0 15px rgba(0,255,120,0.2);
+            background:rgba(255,255,255,0.12);
+        }
+
+        /* ===== BOTÃO ===== */
+
+        #cadastrar{
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:15px;
+            background:linear-gradient(
+            45deg,
+            #00b15d,
+            #49ff9d
+            );
+            color:#05200f;
+            font-size:1rem;
+            font-weight:900;
+            cursor:pointer;
+            transition:0.4s;
+            margin-top:10px;
+        }
+
+        #cadastrar:hover{
+            transform:translateY(-3px);
+            box-shadow:0 0 20px rgba(0,255,120,0.35);
+        }
+
+        /* ===== FOLHAS ===== */
+
+        .folha{
+            position:absolute;
+            width:130px;
+            opacity:0.07;
+            z-index:-1;
+        }
+
+        .folha1{
+            top:40px;
+            left:20px;
+            transform:rotate(15deg);
+        }
+
+        .folha2{
+            bottom:20px;
+            right:10px;
+            transform:rotate(-20deg);
+        }
+
+        /* ===== RESPONSIVO ===== */
+
+        @media(max-width:500px){
+
+            .card{
+                width:90%;
+                padding:30px 25px;
+            }
+
+            .logo{
+                width:180px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- FUNDO -->
+    <div class="background">
+        <video autoplay muted loop playsinline>
+            <source src="../Videos e Imagens/VideoReciclagem(2).mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- FOLHAS -->
+    <img class="folha folha1" src="../Videos e Imagens/recycle.png" alt="">
+    <img class="folha folha2" src="../Videos e Imagens/recycle.png" alt="">
+
+    <!-- LOGO -->
+    <a href="../HOME/home.html">
+        <img class="logo"
+        src="../Videos e Imagens/Recicla Brasil logo design.png"
+        alt="Logo Recicla Brasil">
+    </a>
+
+    <!-- CARD -->
+    <div class="card">
+
+        <a class="voltar" href="../LOGIN/Login.html">
+            ← Voltar para login
+        </a>
+
+        <form>
+
+            <h2>♻ Cadastre-se</h2>
+
+            <div class="campo">
+                <label for="nome">Nome:</label>
+
+                <input type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                required>
+            </div>
+
+            <div class="campo">
+                <label for="sobrenome">Sobrenome:</label>
+
+                <input type="text"
+                id="sobrenome"
+                name="sobrenome"
+                placeholder="Digite seu sobrenome"
+                required>
+            </div>
+
+            <div class="campo">
+                <label for="cpf">CPF:</label>
+
+                <input type="text"
+                id="cpf"
+                name="cpf"
+                placeholder="Digite seu CPF"
+                maxlength="11"
+                required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email:</label>
+
+                <input type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu Email"
+                required>
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha:</label>
+
+                <input type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite a Senha"
+                minlength="6"
+                required>
+            </div>
+
+            <div class="campo">
+                <label for="confirmar_senha">Confirmar Senha:</label>
+
+                <input type="password"
+                id="confirmar_senha"
+                name="confirmar_senha"
+                placeholder="Confirme a Senha"
+                minlength="6"
+                required>
+            </div>
+
+            <input id="cadastrar"
+            type="submit"
+            value="Cadastrar">
+
+        </form>
+
+    </div>
+
+</body>
+</html>

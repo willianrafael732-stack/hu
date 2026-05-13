@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre Nós | RECICLA BRASIL</title>
+
+    <link rel="shortcut icon"
+    href="../Videos e Imagens/favicon-32x32.png"
+    type="image/x-icon">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:#4f9b73;
+            overflow-x:hidden;
+            position:relative;
+            color:rgb(0, 0, 0);
+        }
+
+        /* ===== FUNDO ===== */
+
+        .background{
+            position:fixed;
+            width:100%;
+            height:100%;
+            z-index:-3;
+        }
+
+        .background video{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            filter:brightness(65%);
+        }
+
+        .overlay{
+            position:fixed;
+            width:100%;
+            height:100%;
+            background:linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.10),
+            rgba(80,180,120,0.25)
+            );
+            z-index:-2;
+        }
+
+        /* ===== FOLHAS ===== */
+
+        .folha{
+            position:fixed;
+            width:140px;
+            opacity:0.09;
+            z-index:-1;
+        }
+
+        .folha1{
+            top:30px;
+            left:20px;
+            transform:rotate(20deg);
+        }
+
+        .folha2{
+            bottom:20px;
+            right:20px;
+            transform:rotate(-20deg);
+        }
+
+        /* ===== LOGO ===== */
+
+        .logo-area{
+            position:absolute;
+            top:20px;
+            left:30px;
+        }
+
+        .logo{
+            width:220px;
+            transition:0.4s;
+            filter:drop-shadow(0 0 20px rgba(255,255,255,0.2));
+        }
+
+        .logo:hover{
+            transform:scale(1.05);
+        }
+
+        /* ===== CONTAINER ===== */
+
+        .container{
+            width:100%;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:120px 20px 60px;
+        }
+
+        /* ===== CARD ===== */
+
+        .sobre-nos{
+            width:100%;
+            max-width:1100px;
+            padding:50px;
+            border-radius:35px;
+            background:rgba(255,255,255,0.22);
+            backdrop-filter:blur(12px);
+            border:1px solid rgba(255,255,255,0.25);
+
+            box-shadow:
+            0 0 30px rgba(255,255,255,0.10),
+            0 0 80px rgba(255,255,255,0.05);
+
+            animation:fade 1s ease;
+        }
+
+        @keyframes fade{
+            from{
+                opacity:0;
+                transform:translateY(20px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* ===== TÍTULO ===== */
+
+        .sobre-nos h1{
+            text-align:center;
+            font-size:3.2rem;
+            margin-bottom:35px;
+            color:#000000;
+            font-weight:900;
+            letter-spacing:2px;
+            text-shadow:0 0 15px rgba(255,255,255,0.25);
+        }
+
+        /* ===== TEXTO ===== */
+
+        .sobre-nos p{
+            font-size:1.15rem;
+            line-height:2;
+            color:#000000;
+            text-align:justify;
+        }
+
+        .destaque{
+            color:#000000;
+            font-weight:700;
+        }
+
+        /* ===== BARRA DECORATIVA ===== */
+
+        .barra{
+            width:120px;
+            height:5px;
+            margin:0 auto 35px;
+            border-radius:10px;
+            background:linear-gradient(
+            to right,
+            #ffffff,
+            #d7ffe8
+            );
+        }
+
+        /* ===== RESPONSIVO ===== */
+
+        @media(max-width:768px){
+
+            .logo-area{
+                position:relative;
+                top:auto;
+                left:auto;
+                text-align:center;
+                margin-top:20px;
+            }
+
+            .logo{
+                width:180px;
+            }
+
+            .sobre-nos{
+                padding:35px 25px;
+            }
+
+            .sobre-nos h1{
+                font-size:2.2rem;
+            }
+
+            .sobre-nos p{
+                font-size:1rem;
+                line-height:1.8;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- FUNDO -->
+    <div class="background">
+        <video autoplay muted loop playsinline>
+            <source src="../Videos e Imagens/VideoReciclagem(2).mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- FOLHAS -->
+    <img class="folha folha1"
+    src="../Videos e Imagens/recycle.png"
+    alt="">
+
+    <img class="folha folha2"
+    src="../Videos e Imagens/recycle.png"
+    alt="">
+
+    <!-- LOGO -->
+    <div class="logo-area">
+
+        <a href="../HOME/home.html">
+
+            <img class="logo"
+            src="../Videos e Imagens/Recicla Brasil logo design.png"
+            alt="Logo Recicla Brasil">
+
+        </a>
+
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <div class="sobre-nos">
+
+            <h1>♻ SOBRE NÓS</h1>
+
+            <div class="barra"></div>
+
+            <p>
+
+                Somos um grupo de estudantes da Universidade Cruzeiro do Sul,
+                formado por
+                <span class="destaque">
+                    willian, Jackson, Kevin, Helliosman, Felix e João
+                </span>,
+                unidos pelo propósito de utilizar a tecnologia como ferramenta
+                para gerar impacto positivo na sociedade.
+
+                <br><br>
+
+                Este projeto foi desenvolvido como parte de um trabalho acadêmico,
+                inspirado nos
+                <span class="destaque">
+                    Objetivos de Desenvolvimento Sustentável (ODS)
+                </span>,
+                com foco em um dos maiores desafios da atualidade:
+                o descarte incorreto de resíduos e seus impactos ambientais,
+                sociais e culturais.
+
+                <br><br>
+
+                Vivemos em um cenário em que a produção de lixo cresce constantemente,
+                e muitas vezes a informação sobre como descartá-lo corretamente
+                não chega de forma clara às pessoas.
+
+                Pensando nisso, criamos esta plataforma com o objetivo de tornar
+                o conhecimento sobre reciclagem mais acessível,
+                prático e aplicável no dia a dia.
+
+                <br><br>
+
+                Nosso site funciona como um espaço de conscientização e aprendizado,
+                onde os usuários podem encontrar conteúdos sobre separação de resíduos,
+                tipos de materiais recicláveis, boas práticas sustentáveis
+                e a importância de pequenas atitudes na construção de um futuro melhor.
+
+                <br><br>
+
+                Mais do que informar, buscamos provocar reflexão
+                e incentivar mudanças reais de comportamento.
+
+                Acreditamos que a transformação começa com a educação
+                e com decisões conscientes,
+                mesmo nas ações mais simples do cotidiano.
+
+                <br><br>
+
+                Este projeto também representa a aplicação prática da nossa formação acadêmica,
+                unindo tecnologia, responsabilidade social
+                e compromisso com o meio ambiente.
+
+                É a prova de que, com iniciativa e propósito,
+                é possível criar soluções que contribuam
+                para um mundo mais sustentável.
+
+                <br><br>
+
+                Estamos apenas no começo,
+                e nosso objetivo é evoluir continuamente,
+                trazendo novas funcionalidades
+                e ampliando o alcance da conscientização ambiental.
+
+                <br><br>
+
+                <span class="destaque">
+                    Porque cuidar do planeta não é uma escolha,
+                    é uma necessidade.
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

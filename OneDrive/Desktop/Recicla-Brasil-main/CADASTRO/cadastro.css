@@ -1,0 +1,202 @@
+/* Reset básico */
+/* Remove margens e espaçamentos padrão do navegador
+   e faz com que padding e borda não aumentem o tamanho do elemento */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+/* Define a fonte padrão da página */
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Corpo da página */
+body{
+
+/* Altura total da tela */
+height:100vh;
+
+/* Ativa o Flexbox */
+display:flex;
+
+/* Centraliza horizontalmente */
+justify-content:center;
+
+/* Centraliza verticalmente */
+align-items:center;
+
+/* Fundo com degradê diagonal do preto para verde */
+background: linear-gradient(135deg,#000000,#96e6a1);
+
+}
+
+
+/* Caixa principal do formulário */
+.card{
+
+/* Fundo branco */
+background:white;
+
+/* Espaçamento interno */
+padding:25px;
+
+/* Cantos arredondados */
+border-radius:10px;
+
+/* Largura fixa da caixa */
+width:500px;
+
+/* Sombra da caixa para dar efeito de profundidade */
+box-shadow:0px 4px 12px rgba(1,2,3,4.5);
+}
+
+
+/* Título do formulário */
+.card h2{
+
+/* Centraliza o texto */
+text-align:center;
+
+/* Espaço abaixo do título */
+margin-bottom:25px;
+
+}
+
+
+/* Link "voltar para login" */
+.voltar{
+
+/* Faz o link ocupar uma linha inteira */
+display:block;
+
+/* Espaço abaixo do link */
+margin-bottom:15px;
+
+/* Tamanho da fonte */
+font-size:14px;
+
+/* Remove o sublinhado padrão */
+text-decoration:none;
+
+/* Cor verde */
+color:#4CAF50;
+
+/* Deixa o texto em negrito */
+font-weight:bold;
+
+}
+
+
+/* Efeito quando o mouse passa no link */
+.voltar:hover{
+
+/* Aparece o sublinhado */
+text-decoration:underline;
+
+}
+
+
+/* Cada grupo de campo do formulário */
+.campo{
+
+/* Organiza os elementos em coluna */
+display:flex;
+
+/* Label fica em cima e input embaixo */
+flex-direction:column;
+
+/* Espaço entre os campos */
+margin-bottom:10px;
+
+}
+
+
+/* Texto das labels */
+label{
+
+/* Espaço entre label e input */
+margin-bottom:5px;
+
+/* Texto em negrito */
+font-weight:bold;
+
+/* Tamanho da fonte */
+font-size:14px;
+
+}
+
+
+/* Campos de entrada (inputs) */
+input{
+
+/* Espaçamento interno */
+padding:10px;
+
+/* Cantos arredondados */
+border-radius:5px;
+
+/* Borda cinza clara */
+border:1px solid #ccc;
+
+/* Tamanho da fonte */
+font-size:14px;
+
+/* Animação suave para efeitos */
+transition:0.3s;
+
+}
+
+
+/* Quando o usuário clica no campo */
+input:focus{
+
+/* Remove a borda azul padrão do navegador */
+outline:none;
+
+/* Troca a borda para verde */
+border:1px solid #4CAF50;
+
+/* Cria um brilho verde ao redor do campo */
+box-shadow:0px 0px 5px rgba(76,175,80,0.5);
+
+}
+
+
+/* Botão cadastrar */
+#cadastrar{
+
+/* Espaço acima do botão */
+margin-top:10px;
+
+/* Fundo verde */
+background:#4CAF50;
+
+/* Texto branco */
+color:white;
+
+/* Remove borda padrão */
+border:none;
+
+/* Cursor vira mãozinha */
+cursor:pointer;
+
+/* Texto em negrito */
+font-weight:bold;
+
+/* Animação suave */
+transition:0.3s;
+
+}
+
+
+/* Efeito quando o mouse passa no botão */
+#cadastrar:hover{
+
+/* Verde mais escuro */
+background:#3e8e41;
+
+/* Aumenta o botão em 5% */
+transform:scale(1.05);
+
+}

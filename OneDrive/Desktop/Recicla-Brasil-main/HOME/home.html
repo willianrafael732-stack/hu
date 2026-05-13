@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECICLA BRASIL</title>
+
+    <link rel="shortcut icon" href="../Videos e Imagens/favicon-32x32.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#018d2e;
+            color:#000;
+            overflow-x:hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+
+        header{
+            width:100%;
+            position:fixed;
+            top:0;
+            z-index:1000;
+            backdrop-filter:blur(10px);
+            background:rgb(0, 153, 51);
+            border-bottom:1px solid rgba(0,0,0,0.08);
+        }
+
+        .links{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 8%;
+        }
+
+        .links h1{
+            font-size:2rem;
+            color:#0d5c2b;
+            font-weight:900;
+            letter-spacing:2px;
+        }
+
+        .links a{
+            color:#000;
+            text-decoration:none;
+            margin-left:25px;
+            transition:0.3s;
+            font-weight:700;
+        }
+
+        .links a:hover{
+            color:#000000;
+        }
+
+        /* ===== NAVBAR SECUNDÁRIA ===== */
+
+        .navbar2{
+            position:fixed;
+            top:85px;
+            width:100%;
+            z-index:999;
+            background:rgba(0, 206, 55, 0.801);
+            backdrop-filter:blur(6px);
+        }
+
+        .links2{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 8%;
+            flex-wrap:wrap;
+        }
+
+        .links2 a{
+            color:#000;
+            text-decoration:none;
+            margin-right:20px;
+            transition:0.3s;
+            font-weight:700;
+        }
+
+        .links2 a:hover{
+            color:#0d8a3f;
+        }
+
+        .icones{
+            display:flex;
+            gap:15px;
+            align-items:center;
+        }
+
+        .icones img{
+            transition:0.3s;
+        }
+
+        .icones img:hover{
+            transform:scale(1.2);
+        }
+
+        /* ===== HERO ===== */
+
+        section{
+            position:relative;
+            width:100%;
+            height:100vh;
+            overflow:hidden;
+        }
+
+        .video video{
+            width:100%;
+            height:100vh;
+            object-fit:cover;
+            filter:brightness(75%);
+        }
+
+        .inicio{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            text-align:center;
+            z-index:2;
+            width:90%;
+        }
+
+        .inicio h1{
+            font-size:5rem;
+            font-weight:900;
+            color:#ffffff;
+            text-shadow:0 0 25px rgba(0,0,0,0.5);
+        }
+
+        .inicio p{
+            font-size:1.3rem;
+            margin-top:10px;
+            letter-spacing:1px;
+            color:#f5fff8;
+            font-weight:700;
+            text-shadow:0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .inicio img{
+            margin-top:20px;
+            animation:flutuar 2s infinite;
+            cursor:pointer;
+        }
+
+        @keyframes flutuar{
+            0%{
+                transform:translateY(0px);
+            }
+            50%{
+                transform:translateY(10px);
+            }
+            100%{
+                transform:translateY(0px);
+            }
+        }
+
+        /* ===== SEÇÃO 2 ===== */
+
+        .section2{
+            background:linear-gradient(to bottom, #dff8e7, #baf0cb);
+            padding:100px 8%;
+            text-align:center;
+        }
+
+        .section2 p:first-child{
+            color:#0d8a3f !important;
+            font-weight:700;
+            letter-spacing:2px;
+        }
+
+        .section2 h1{
+            font-size:3rem;
+            font-weight:900;
+            margin-bottom:50px;
+            color:#000;
+        }
+
+        /* ===== TUTORIAL ===== */
+
+        .tutorial{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:25px;
+            margin-top:50px;
+            margin-bottom:80px;
+        }
+
+        .tutorial div{
+            background:rgba(20, 238, 0, 0.76);
+            border:1px solid rgba(0,0,0,0.08);
+            padding:30px 20px;
+            border-radius:20px;
+            transition:0.4s;
+            backdrop-filter:blur(5px);
+        }
+
+        .tutorial div:hover{
+            transform:translateY(-10px);
+            background:rgb(0, 170, 51);
+            box-shadow:0 0 25px rgba(0,180,90,0.18);
+        }
+
+        .tutorial img{
+            margin-bottom:20px;
+        }
+
+        .tutorial p{
+            font-size:1rem;
+            color:#000;
+            font-weight:700;
+        }
+
+        /* ===== CARROSSEL ===== */
+
+        .carousel{
+            margin-top:40px;
+            border-radius:30px;
+            overflow:hidden;
+            box-shadow:
+            0 0 30px rgba(0,180,90,0.18),
+            0 0 80px rgba(0,180,90,0.08);
+        }
+
+        .carousel img{
+            width:100%;
+            height:85vh;
+            object-fit:cover;
+            filter:brightness(100%);
+            transition:0.5s;
+        }
+
+        /* ===== EFEITO FOLHAS ===== */
+
+        .folha{
+            position:absolute;
+            width:120px;
+            opacity:0.08;
+            z-index:0;
+        }
+
+        .folha1{
+            top:120px;
+            left:-20px;
+            transform:rotate(20deg);
+        }
+
+        .folha2{
+            bottom:40px;
+            right:-20px;
+            transform:rotate(-20deg);
+        }
+
+        /* ===== RESPONSIVO ===== */
+
+        @media(max-width:900px){
+
+            .links{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .links2{
+                justify-content:center;
+                gap:20px;
+            }
+
+            .inicio h1{
+                font-size:3rem;
+            }
+
+            .inicio p{
+                font-size:1rem;
+            }
+
+            .navbar2{
+                top:120px;
+            }
+
+            .carousel img{
+                height:350px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- FOLHAS DECORATIVAS -->
+    <img class="folha folha1" src="../Videos e Imagens/recycle.png" alt="">
+    <img class="folha folha2" src="../Videos e Imagens/recycle.png" alt="">
+
+    <!--Inicio da navbar-->
+    <header>
+        <div class="links">
+
+            <h1>♻ RECICLA BRASIL</h1>
+
+            <div>
+                <a href="../HOME/home.html">Início</a>
+                <a href="../LOGIN/Login.html">Login</a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="navbar2">
+
+        <div class="links2">
+
+            <div>
+                <a href="">Ver Pontos de Coleta</a>
+                <a href="../CADASTRO/cadastro.html">Cadastrar</a>
+                <a href="../Sobre-nos/sobre-nos.html">Sobre Nós</a>
+            </div>
+
+            <div class="icones">
+
+                <a href="">
+                    <img src="../Videos e Imagens/whatsapp.png"
+                    width="25px"
+                    height="25px"
+                    alt="whatsapp">
+                </a>
+
+                <a href="https://www.instagram.com/menos1lixo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                    <img src="../Videos e Imagens/instagram.png"
+                    width="23px"
+                    height="23px"
+                    alt="instagram">
+                </a>
+
+                <a href="https://youtube.com/@ecyclebr?si=U75toFTvGZRQZT20">
+                    <img src="../Videos e Imagens/youtube.png"
+                    width="30px"
+                    height="30px"
+                    alt="youtube">
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--Fim da navbar-->
+
+    <!--Inicio da primeira seção do site-->
+    <section>
+
+        <!--VIDEO DE FUNDO-->
+        <div class="video">
+
+            <video autoplay muted loop playsinline>
+                <source src="../Videos e Imagens/VideoReciclagem(2).mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+
+        </div>
+        <!--VIDEO DE FUNDO-->
+
+        <div class="inicio">
+
+            <h1>RECICLA BRASIL</h1>
+
+            <p>UMA AJUDA AO MEIO AMBIENTE 🌎</p>
+
+            <p>
+                Conectando você aos lugares que cuidam do planeta ♻️
+            </p>
+
+            <br><br>
+
+            <p style="font-weight:700;">
+                VEJA COMO FUNCIONA
+            </p>
+
+            <a href="#como-funciona">
+                <img src="../Videos e Imagens/PNG SETA PARA BAIXO.png"
+                width="50"
+                alt="">
+            </a>
+
+        </div>
+
+    </section>
+    <!--Fim da primeira seção do site-->
+
+    <!-- SEGUNDA SEÇÃO -->
+
+    <section class="section2" id="como-funciona">
+
+        <p>SIMPLES, CRIATIVO E SUSTENTÁVEL</p>
+
+        <h1>COMO USAR O RECICLA BRASIL</h1>
+
+        <div class="tutorial">
+
+            <div>
+                <img src="../Videos e Imagens/recycle.png"
+                alt=""
+                width="50px"
+                height="50px">
+
+                <p>1. Separe seus recicláveis.</p>
+            </div>
+
+            <div>
+                <img src="../Videos e Imagens/placeholder-filled-point.png"
+                alt=""
+                width="50px"
+                height="50px">
+
+                <p>2. Encontre pontos próximos.</p>
+            </div>
+
+            <div>
+                <img src="../Videos e Imagens/house.png"
+                alt=""
+                width="50px"
+                height="50px">
+
+                <p>3. Escolha um local.</p>
+            </div>
+
+            <div>
+                <img src="../Videos e Imagens/trash.png"
+                alt=""
+                width="50px"
+                height="50px">
+
+                <p>4. Descarte corretamente.</p>
+            </div>
+
+            <div>
+                <img src="../Videos e Imagens/humanitarian.png"
+                alt=""
+                width="50px"
+                height="50px">
+
+                <p>5. Contribua com o planeta.</p>
+            </div>
+
+        </div>
+
+        <!-- CARROSSEL -->
+
+        <div id="carouselExampleSlidesOnly"
+        class="carousel slide"
+        data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="../Videos e Imagens/2007.i605.021.F.m005.c5.recycling set.jpg"
+                    class="d-block w-100"
+                    alt="">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../Videos e Imagens/volunteers-cleaning-up-nice-woods.jpg"
+                    class="d-block w-100"
+                    alt="">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../Videos e Imagens/people-collecting-trash-woods.jpg"
+                    class="d-block w-100"
+                    alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

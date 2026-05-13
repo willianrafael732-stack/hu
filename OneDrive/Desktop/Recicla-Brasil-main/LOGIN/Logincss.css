@@ -1,0 +1,155 @@
+/* Estilização do corpo da página */
+body {
+
+  height: 100vh; /* Altura do body igual a 100% da tela (viewport height) */
+  background: linear-gradient(135deg, #000000, #96e6a1); /* Cria um fundo em degradê diagonal de preto para verde */
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+
+}
+
+
+
+.voltar {
+
+  color:black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: x-large;
+  margin-left: 1.5%;
+  transition: 0.5s;
+  background-color: aliceblue;
+  padding: 3px;
+  border-radius: 10%;
+}
+
+.voltar:hover {
+
+  transform: scale(1.1);
+  color: #0f3a2a;
+  
+}
+
+
+.logo{
+  
+  position: absolute;
+  
+}
+
+/* Reset básico para todos os elementos */
+* {
+
+  padding: 0px; /* Remove espaçamento interno padrão */
+  margin: 0px; /* Remove margens padrão */
+  box-sizing: border-box;
+  /* Faz com que padding e borda sejam incluídos no tamanho total do elemento */
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* Estilização do formulário */
+form{
+
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Organiza os elementos em coluna (um abaixo do outro) */
+  gap: 5px; /* Espaçamento entre os elementos do formulário */
+
+}
+
+.cadastro {
+
+  text-align: center;
+  margin: 10px;
+  font-size: 15px;
+
+}
+
+.cadastro a{
+
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #3e8e41;
+
+}
+
+.cadastro a:hover {
+
+  text-decoration: underline;
+
+}
+
+/* Caixa principal do login */
+.card {
+  
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10%;
+  background: white; /* Fundo branco */
+  padding: 40px; /* Espaçamento interno */
+  border-radius: 10px; /* Cantos arredondados */
+  width: 350px; /* Largura fixa */
+  height: 350px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra da caixa para dar efeito de profundidade */
+
+}
+
+/* Estilo do título dentro do card */
+.card h2 {
+
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 20px; /* Espaço abaixo do título */
+
+}
+
+/* Estilo geral dos campos de input */
+input {
+
+  width: 100%; /* Ocupa toda a largura do card */
+  padding: 10px; /* Espaçamento interno */
+  margin-top: 5px; /* Espaço acima */
+  margin-bottom: 10px; /* Espaço abaixo */
+  border-radius: 5px; /* Cantos arredondados */
+  border: 1px solid #ccc; /* Borda cinza clara */
+
+}
+
+/* Estilo quando o input está selecionado (clicado) */
+input:focus {
+
+  outline: none;/* Remove a borda padrão azul do navegador */
+  border: 1px solid #4caf50;/* Troca a borda para verde */
+  box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.5);/* Cria um brilho verde ao redor do campo */
+
+}
+
+/* Botão de entrar */
+#entrar {
+
+  background: #4caf50; /* Fundo verde */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Muda o cursor para mãozinha */
+  font-weight: bold; /* Texto em negrito */
+  transition: 0.5s; /* Animação suave para mudanças (hover por exemplo) */
+
+}
+
+label {
+
+  margin-bottom: 1px;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+
+/* Efeito quando o mouse passa em cima do botão */
+#entrar:hover {
+
+  background: #3e8e41;/* Verde mais escuro */
+  transform: scale(1.05);/* Aumenta o botão em 5% criando efeito de zoom */
+
+}
